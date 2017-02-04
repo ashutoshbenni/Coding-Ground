@@ -41,7 +41,10 @@ def has_valid_parathesis(infix):
 		if i == '(':
 			stack.append(i)
 		elif i == ')':
-			stack.pop()
+			if stack:
+				stack.pop()
+			else:
+				return False
 	if not stack:
 		return True 
 	else:
